@@ -3,3 +3,8 @@
 # Allow crawling of all content
 User-agent: *
 Disallow:
+
+# Section 2
+# Step 4
+
+Disallow the whole world.
