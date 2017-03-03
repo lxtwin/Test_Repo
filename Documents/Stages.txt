@@ -1,0 +1,347 @@
+    Zena has been asked to create a branch called dev and a branch called Red_Feature from Version_2.0, then push them back up for the team to use.
+    Now for the push, we must remember to use the "--set-upstream" option, if we look at the GUTHub web page we can see the before and after.
+    Create and push the new branches to GITHub.
+    The new branches can now be seen in the GITHub web page.
+    Aena, will have to now pull the latest branches back to reflect the changes.
+
+
+Commands Used:
+
+    git pull                                                                    -  Pull back updates.
+    git checkout  [Repo]                                               -  Switch to a branch.
+    git checkout -b [New Branch] [Source Branch]       - Create a new branch from an existing branch.
+    git push --set-upstream origin [Repo]                    -  Push the new branch to GITHub.
+    git branch -rv                                                         - Show remote branches.
+    
+    PART (2)
+Steps:
+
+    Modify Master / Version_2.0.
+    Update dev branch.
+    Branch Purple_Feature from dev branch.
+    Modify Red_Feature.
+
+ 
+
+Step 1)
+
+    Modify sortedCollections/sortedCollections.iml file
+    Edit, add, commit and push the change.
+    Successfully checking the change in GITHub
+
+ 
+
+Step 2)
+
+    Switched to dev branch, a file sortedCollections/ExtendedSortedCollections.iml was added, committed and pushed.
+    Now checked in the GITHub web page. The dev change is present.
+
+Step 3)
+
+    Aena will create a branch Purple_Feature from the development branch, but first Aena will do a "git pull"
+    We will now create a branch from dev.
+    We can check the content that was created in Step 2 (sortedCollections/ExtendedSortedCollections.iml),
+    and by looking at the GITHub webpage.
+    We will create a Purple_Feature directory and a header page.
+    It is created and verified.
+
+Step 4)
+
+Zena will create a Red_Feature directory and a Red_Feature file, as always she will sync, just in case.
+
+    Once synced, she creates an install script and pushes it back to the Red_Feature branch.
+
+ 
+Commands Used:
+
+    git pull                                                                    -  Pull back updates.
+    git checkout  [Repo]                                               -  Switch to a branch.
+    git checkout -b [New Branch] [Source Branch]       - Create a new branch from an existing branch.
+    git push --set-upstream origin [Repo]                    -  Push the new branch to GITHub.
+    git branch -rv                                                         - Show remote branches.
+    git add [file(s)]                                                        - Add file(s) to the local repository.
+    git commit -m "A comment"                                     - Commit the file into the local repository.
+    
+    PART 3
+    
+    Steps:
+
+    dev change.
+    Purple_Feature change.
+    Red_Feature changed.
+
+
+ 
+
+All 3 developers have started the day checking that they are up to date.
+
+Now that they are, they are all ready to work on a different part of the project.
+ 
+
+Step 1)
+    A change has been made in the dev stream, it was committed and pushed. 
+
+ 
+
+Step 2)
+    A change has been made in the Purple_Feature stream, it was committed and pushed.
+
+ 
+
+Step 3)
+    A change has been made in the Red_Feature stream, it was committed and pushed.
+
+ 
+Commands Used:
+
+    git pull                                                                    -  Pull back updates.
+    git checkout  [Repo]                                               -  Switch to a branch.
+    git checkout -b [New Branch] [Source Branch]       - Create a new branch from an existing branch.
+    git push --set-upstream origin [Repo]                    -  Push the new branch to GITHub.
+    git branch -rv                                                         - Show remote branches.
+    git add [file(s)]                                                        - Add file(s) to the local repository.
+    git commit -m "A comment"                                     - Commit the file into the local repository.
+    git commit -am "A comment"                                   - Add and Commit the file into the local repository.
+    
+    PART 4 
+    
+    
+Steps:
+
+    Purple_Feature merged into Development then deleted.
+    Development branched into release.
+    Red_Feature changed.
+
+
+ 
+
+    As per normal, all three developers sync the code when they start of the day.
+
+ 
+
+Step 1)
+
+    The first step is to merge the changes from the Purple feature branch into the development branch, this is performed with the "git merge"  command.
+    Aena decides to inspect the logs and check what the difference is between the dev and her Purple_Feature branch. To check the log Aena uses the "git log --oneline --decorate --graph  --all" command.
+
+ 
+
+    We now switch to the target branch, for us it is dev, so we use the command "git checkout dev", then look at the changes with command "git diff dev Purple_Feature".
+
+ 
+
+    Aena now will merge the Purple_Feature into the dev branch using the command "git merge -m "Merging Purple_Feature into dev branch" Purple_Feature"
+
+ 
+
+    This is now pushed back to the GITHub server, but a pull was done first to check.
+
+ 
+
+    Before the Purple_Feature is deleted Aena checks on the GITHub server
+
+ 
+
+    As everything looks good, Purple_Feature is removed, first locally with the command "git branch -d Purple_Feature".
+
+ 
+
+    Then remotely with "git push origin --delete Purple_Feature"
+
+
+    Then when inspected on the GITHub server is is no longer there.
+
+
+Step 2)
+
+    The next step involves creating a release branch from the development branch, the development team check the status and pull back an changes.
+
+ 
+
+    From here a new branch called Release is created. This is done with the command "git checkout -b Release dev".
+
+ 
+
+    It now needs to be pushed up to the GITHub server, this is accomplished with the "git push --set-upstream origin Release" command.
+
+ 
+
+    We now check this in the GITHub GUI, it has been created successfully.
+
+ 
+
+    The Lead developer now creates a directory, a file then commits the change and pushes it.
+
+ 
+
+    And verification shows it is there.
+
+ 
+
+Step 3)
+
+
+    The final task for the day is to update the Red_Feature branch
+
+ 
+
+    Zena made a quick change to the Red_Feature branch and sent it to the GITHub server.
+
+ 
+
+    She then checked it on the Server.
+
+
+    The change is there and saved.
+
+Commands Used:
+
+    git pull                                                                    -  Pull back updates.
+    git fetch                                                                  -  Pull back updates.
+    git checkout  [Repo]                                               -  Switch to a branch.
+    git checkout -b [New Branch] [Source Branch]       - Create a new branch from an existing branch.
+    git push --set-upstream origin [Repo]                    -  Push the new branch to GITHub.
+    git branch -rv                                                         - Show remote branches.
+    git add [file(s)]                                                        - Add file(s) to the local repository.
+    git commit -m "A comment"                                     - Commit the file into the local repository.
+
+
+
+
+PART 5 
+
+
+Steps:
+
+    Master (Version_2.0) updated and renamed to Version_2.1.
+    The Release branch updated and merged into the Version_2.1 branch.
+    A mistake happens.
+    The development branch is updated.
+    The Release branch is merged back into the development branch.
+
+
+ 
+
+Step 1)
+
+    A file change has been made in the Version repository and pushed to the GITHub server.
+
+ 
+
+    The branch is renamed from "Version_2.0" to "Version_2.1" with the command "git branch -m Version_2.0 Version_2.1"
+
+ 
+
+    After running "git push origin :Version_2.0 Version_2.1" and "git push origin -u Version_2.1" the change should be complete.
+
+ 
+
+    As always this can be checked in the GITHub GUI.
+
+ 
+
+    And in with the git log command.
+
+ 
+
+    And branch command.
+
+ 
+
+Step 2)
+
+    We will now update the Release branch and merged into the Version_2.1 branch after we have switched branched and pulled down any changes.
+
+ 
+
+    A change has happened and the content added and pushed.
+
+ 
+
+    We will now merge the Release branch into the master 2.1 branch.
+    Remember that we now switch to the target branch, for us it is Version_2.1, we will then pull back anything from Version_2.1 that may have changed, we do not expect anything; but it is worth checking.
+    We can run a "git diff Version_2.1 dev"
+
+ 
+
+    Followed by a merge and a push.
+
+ 
+
+And finally checking with the GITHub web site.
+
+ 
+
+The Mistake
+
+We have made a mistake and merged dev into Version_2.1, so we now have to revert and merge the release branch. For this we need to look at the "git revert"
+
+ 
+
+ 
+
+ 
+
+"git revert -m 1 58652942c6d9b839eee0b0ec676311b3eb068a1e" and a "git push" not  "git push -u origin master"
+
+ 
+
+If we go back we should see that the Purple_Feature has now gone.
+
+ 
+
+Therefore we can now continue with the merge or Release into Version_2.1
+
+We run a "git diff Version_2.1 Release"
+
+ 
+
+And now the merge, then a push.
+
+ 
+
+ 
+
+ 
+
+Step 3)
+
+ 
+
+Step 4)
+
+ 
+Commands Used:
+
+    git pull                                                                    -  Pull back updates.
+    git checkout  [Repo]                                               -  Switch to a branch.
+    git checkout -b [New Branch] [Source Branch]       - Create a new branch from an existing branch.
+    git push --set-upstream origin [Repo]                    -  Push the new branch to GITHub.
+    git branch -rv                                                         - Show remote branches.
+    git add [file(s)]                                                        - Add file(s) to the local repository.
+    git commit -m "A comment"                                     - Commit the file into the local repository.
+    git branch -m Version_2.0 Version_2.1                  - Rename a branch.
+    git push origin :Version_2.0 Version_2.1               - Remove the old branch remotely.
+
+
+
+
+=====================================================================================================================
+
+    At first the file is added with the "git add" command, after that we can jump straight to using "git commit -am" instead of using and add then a commit.
+
+    Six lines have been added to the file
+    We have selected a point where we think that things were broken, we will change the view back to this point and work from there, it is important to remember that the changes are temporary and the last commit (6) will not be affected.
+    A "git status" shows that we are in a detached state.
+    If we inspect the file that we were working on, you can see that is has reverted to when we did the commit.
+    We are now at a temporary state, where any changes will not be saved unless we save the branch. This feature allows us to test where something may have broken.
+    This time we will not make a branch, but switch back to the main branch, then back again to show that the main HEAD has not changed.
+    We did a commit to show that it has been written into the log, which will also vanish.
+    After looking at the branches, we switch back to the main branch and display the commit logs, it can be seen that the commit that was previously run has vanished.
+    The file has also reverted to the original state.
+    We will now checkout the same branch again and check the logs, yet again we can see that anything previously changes has vanished.
+    We will make the changes again, but this time save the branch so that we can go to it later if needed.
+    We now have the branch all saved with the updated work so that we can either , save, delete or merge the contents at a later date.
+
+
+
