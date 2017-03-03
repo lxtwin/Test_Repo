@@ -1,106 +1,118 @@
 
 There are 3 Developers, Aena (Purple), Qena (Dev and Release) and Zena (Red).
+There are 3 Developers, Aena (Purple), Qena (Dev and Release) and Zena (Red).
 
 Notes:
     Frequent pulls and pushes will happen
     This document will go along side a diagram that is being created.
     People are invited to add and comment.
     
-=====================================================================================================================
+
+=======================================================================
 Section 1
-=====================================================================================================================
+=======================================================================
 
 Step 1
-    Qena creates a branch called Version 1.0 from master.
+    Task: Qena creates a branch called Version 1.0 from master.
     
     git checkout -b Version_1.0 master
     git branch --edit-description  Version_1.0
     git push -u origin Version_1.0
     
+
 Step 2
-    Qena created a branch called Development from Version 1.0.
+    Task: Qena created a branch called Development from Version 1.0.
     
     git checkout -b Development Version_1.0 
     git branch --edit-description  Development
     git push -u origin Development
 
+
 Step 3
-    Zena creates a branch called Red_Feature from Version_1.0.
+    Task: Zena creates a branch called Red_Feature from Version_1.0.
     
-    git checkout -b Development Red_Feature
+    git checkout -b Red_Feature Version_1.0
     git branch --edit-description  Red_Feature
     git push -u origin Red_Feature
 
 
-Summary of Commands Used:
-    git pull                                           - Pull back updates with merge.
-    git fetch                                          - fetch the updates but do not merge.
-    git checkout  [Repo]                               - Switch to a branch.
-    git checkout -b [New Branch] [Source Branch]       - Create a new branch from an existing branch.
-    git push --set-upstream origin [Repo]              - Push the new branch to GITHub.
-    git branch [name]                                  - Create a branch but do not switch.
-    git branch -rv                                     - Show remote branches.
-    
+
+
 Notes:
     For the push, we must remember to use the "--set-upstream" option.
     Not much happened or to report.
   
     
-    UP TO THIS PART.
-=====================================================================================================================    
-    PART 2
-=====================================================================================================================    
-Steps:
 
-    Modify Master / Version_2.0.
-    Update dev branch.
-    Branch Purple_Feature from dev branch.
-    Modify Red_Feature.
+=======================================================================
+Section 2
+======================================================================= 
 
+Step 4
+   Task: Qena will make an update in Version 1.0.
+    
+    git checkout Version_1.0
+	vi initializr/robots.txt
+	git commit -am "Section 2 - Step 4: Updating initializr/robots.txt"
+	git push
+
+Log:
+git log --oneline --decorate --graph
+* 867f783 (HEAD -> Version_1.0) Section 2 - Step 4: Updating initializr/robots.txt
+* d4b0bd7 (origin/Version_1.0) Documents created as I go along
+* ffaadac Update Stages.txt
+* f8d7e55 Some notes that will be moved around later
+* 5d25264 (origin/master, origin/Red_Feature, origin/Development, master, Red_Feature, Development) 2nd: Adding a readme
+* 1882589 First commit of All the test stuff
+
+Step 5
+    Task: Make an update in Development.
+
+    git checkout Development 
+    vi Features/New_Dev.URL
+    git add Features/New_Dev.URL
+    git commit -m "Section 2 - Step 5: Creating Features/New_Dev.URL"
+    git push
+    
+Log:
+* 38c8d22 (HEAD -> Development, origin/Development) Section 2 - Step 5: Creating Features/New_Dev.URL
+* 5d25264 (origin/master, origin/Red_Feature, master, Red_Feature) 2nd: Adding a readme
+* 1882589 First commit of All the test stuff
+
+
+
+Step 6
+    Task: Create a Purple_Feature branch from Development.
+
+    git checkout -b Purple_Feature Development
+    git branch --edit-description  Purple_Feature
+    git push origin -u Purple_Feature
+
+Log:
+git log --oneline --decorate --graph
+* 38c8d22 (HEAD -> Purple_Feature, origin/Purple_Feature, origin/Development, Development) Section 2 - Step 5: Creating Features/New_Dev.URL
+* 5d25264 (origin/master, origin/Red_Feature, master, Red_Feature) 2nd: Adding a readme
+* 1882589 First commit of All the test stuff
+Step 7
+    Task: Zena will make an update in Red_Feature.
+
+    mkdir Red_Feature
+    vi Red_Feature/Section2_Step7.txt
+    git add Red_Feature/Section2_Step7.txt
+    git commit -m "Section 2 - Step 7: Creating Red_Feature/Section2_Step7.txt"
+    git push
+
+Log:
+git log --oneline --decorate --graph
+* cdadbe3 (HEAD -> Red_Feature, origin/Red_Feature) Section 2 - Step 7: Creating Red_Feature/Section2_Step7.txt
+* 5d25264 (origin/master, master) 2nd: Adding a readme
+* 1882589 First commit of All the test stuff
  
 
-Step 1)
 
-    Modify sortedCollections/sortedCollections.iml file
-    Edit, add, commit and push the change.
-    Successfully checking the change in GITHub
-
- 
-
-Step 2)
-
-    Switched to dev branch, a file sortedCollections/ExtendedSortedCollections.iml was added, committed and pushed.
-    Now checked in the GITHub web page. The dev change is present.
-
-Step 3)
-
-    Aena will create a branch Purple_Feature from the development branch, but first Aena will do a "git pull"
-    We will now create a branch from dev.
-    We can check the content that was created in Step 2 (sortedCollections/ExtendedSortedCollections.iml),
-    and by looking at the GITHub webpage.
-    We will create a Purple_Feature directory and a header page.
-    It is created and verified.
-
-Step 4)
-
-Zena will create a Red_Feature directory and a Red_Feature file, as always she will sync, just in case.
-
-    Once synced, she creates an install script and pushes it back to the Red_Feature branch.
-
- 
-Commands Used:
-
-    git pull                                                                    -  Pull back updates.
-    git checkout  [Repo]                                               -  Switch to a branch.
-    git checkout -b [New Branch] [Source Branch]       - Create a new branch from an existing branch.
-    git push --set-upstream origin [Repo]                    -  Push the new branch to GITHub.
-    git branch -rv                                                         - Show remote branches.
-    git add [file(s)]                                                        - Add file(s) to the local repository.
-    git commit -m "A comment"                                     - Commit the file into the local repository.
-  
-=====================================================================================================================  
-PART 3
-=====================================================================================================================    
+=======================================================================
+Section 3
+=======================================================================
     Steps:
 
     dev change.
@@ -270,9 +282,33 @@ Commands Used:
     We did a commit to show that it has been written into the log, which will also vanish.
     After looking at the branches, we switch back to the main branch and display the commit logs, it can be seen that the commit that was previously run has vanished.
     The file has also reverted to the original state.
-    We will now checkout the same branch again and check the logs, yet again we can see that anything previously changes has vanished.
-    We will make the changes again, but this time save the branch so that we can go to it later if needed.
-    We now have the branch all saved with the updated work so that we can either , save, delete or merge the contents at a later date.
 
 
 
+=====================================================================================================================
+
+
+git branch -m dev Development
+git push origin :dev Development
+git push origin -u Development
+
+
+Summary of Commands Used:
+git pull
+Pull back updates with merge.
+git fetch
+fetch the updates but do not merge.
+git checkout  [Repo]
+Switch to a branch.
+it checkout -b [New Branch] [Source Branch]
+Create a new branch from an existing branch.
+git push --set-upstream origin [Repo]
+Push the new branch to GITHub.
+git branch [name]
+Create a branch but do not switch.
+git branch -rv
+Show remote branches.
+git add [file(s)] 
+Add file(s) to the local repository.
+git commit -m "A comment"
+Commit the file into the local repository.
