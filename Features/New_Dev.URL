@@ -12,4 +12,9 @@
 #
 
 	<razer name="bic.hibernate.sharp" level="blunt"/>
+#
+# Section 5 - Step 17
+#
+
+	<ToothBrush name="CurlyCurl" level="Broken"/>
 </configuration>
