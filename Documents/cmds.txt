@@ -143,7 +143,7 @@ Commands:
         mkdir Patches
         vi Patches/Development_Patch_Section4-Step11.sh
         git add Patches/Development_Patch_Section4-Step11.sh
-        git commit -m “Patches/Development_Patch_Section4-Step11.sh”
+        git commit -m “Section 4 - Step 11: Patches/Development_Patch_Section4-Step11.sh”
         git push
 
 Step 12
@@ -207,7 +207,7 @@ Commands:
         mkdir Release
         vi Release/Release_Notes_Section5-Step15.txt
         git add Release/Release_Notes_Section5-Step15.txt
-        git commit -m  "Release Branch: Release/Release_Notes_Section5-Step15.txt"
+        git commit -m  "Section 5 - Step 15: Release Branch: Release/Release_Notes_Section5-Step15.txt"
         git push
 
 
@@ -236,7 +236,7 @@ Update the Development branch.
 Commands:
         git checkout Development
         vi Features/New_Dev.URL
-        git commit -am "Development: Section 5 - Step 17: Updating Features/New_Dev.URL"
+        git commit -am "Section 5 - Step 17: Development: Updating Features/New_Dev.URL"
         git push
 
 
@@ -265,7 +265,7 @@ Version 1.1 branched from Version 1.0, then Version 1.0 frozen.
 Commands:
         git checkout Version_1.0
         git checkout -b Version_1.1 Version_1.0
-        git branch --edit-description  Version_1.1
+        git branch --edit-description Version_1.1
         git push -u origin Version_1.1
 
 
@@ -288,7 +288,7 @@ Commands:
         git checkout Development
         vi Features/v1.1_New_Dev.URL
         git add Features/v1.1_New_Dev.URL
-        git commit -m "Development: Section 5 - Step 21: Updating Features/v1.1_New_Dev.URL"
+        git commit -m "Section 5 - Step 21: Development: Updating Features/v1.1_New_Dev.URL"
         git push
 
 
