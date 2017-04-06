@@ -1,0 +1,294 @@
+Step 1
+
+Task:
+Create Version 1.0 branch from master
+
+Commands:
+        git checkout -b Version_1.0 master
+        git branch --edit-description  Version_1.0
+        git push -u origin Version_1.0
+
+
+ 
+Step 2
+
+Task:
+Create a Development branch from Version 1.0.
+
+Commands:
+        git pull
+        git checkout Version_1.0
+        git checkout -b Development Version_1.0
+        git branch --edit-description  Development
+        git push -u origin Development
+
+ 
+ 
+Step 3
+
+Task:
+Create a Red_Feature branch from Development
+
+Commands:
+        git pull
+        git checkout Development
+        git checkout -b Red_Feature Development
+        git branch --edit-description  Red_Feature
+        git push -u origin Red_Feature
+
+
+Step 4
+
+Task:
+Update Version 1.0.
+
+Commands:
+        git checkout Version_1.0
+        vi initializr/robots.txt
+        git commit -am "Section 2 - Step 4: Updating initializr/robots.txt"
+        git push
+
+
+ 
+Step 5
+
+Task:
+Update the Development branch.
+
+Commands:
+        git checkout Development
+        mkdir Features
+        vi Features/New_Dev.URL
+        git add Features/New_Dev.URL
+        git commit -m "Section 2 - Step 5: Creating Features/New_Dev.URL"
+        git push
+
+
+ 
+Step 6
+
+Task:
+Branch a Purple_Feature branch from Development.
+
+Commands:
+        git checkout Development
+        git checkout -b Purple_Feature Development
+        git branch --edit-description  Purple_Feature
+        git push origin -u Purple_Feature
+
+ 
+Step 7
+
+Task:
+Update the Red_Feature branch.
+
+Commands:
+       git checkout Red_Feature
+       mkdir Red_Feature
+       vi Red_Feature/Section2_Step7.txt
+       git add Red_Feature/Section2_Step7.txt
+       git commit -m "Section 2 - Step 7: Creating Red_Feature/Section2_Step7.txt"
+       git push
+
+ 
+Step 8
+
+Task:
+Update the Development branch.
+
+Commands:
+        git checkout Development
+        vi Features/Extra_New_Dev.URL
+        git add Features/Extra_New_Dev.URL
+        git commit -m "Section 3 - Step 8: Creating Features/Extra_New_Dev.URL"
+        vi Features/New_Dev.URL
+        git commit -am "Section 3 - Step 8: Updating Features/New_Dev.URL"
+        git push
+
+
+Step 9
+
+Task:
+Update the Purple_Feature branch.
+
+Commands:
+        git checkout Purple_Feature
+        mkdir Purple_Feature
+        vi Purple_Feature/Section3_Step9.txt
+        git add Purple_Feature/Section3_Step9.txt
+        git commit -m "Section 3 - Step 9: Creating Red_Feature/Section3_Step9.txt"
+        git push
+
+
+Step 10
+
+Task:
+Update the Red_Feature branch.
+
+Commands:
+        git checkout Red_Feature
+        vi Red_Feature/Section3_Step10.sh
+        git add Red_Feature/Section3_Step10.sh
+        git commit -m "Section 3 - Step 10: Creating Red_Feature/Section3_Step10.sh"
+        git push
+
+ 
+Step 11
+
+Task:
+Update the Development branch.
+
+Commands:
+        git checkout Development
+        mkdir Patches
+        vi Patches/Development_Patch_Section4-Step11.sh
+        git add Patches/Development_Patch_Section4-Step11.sh
+        git commit -m “Patches/Development_Patch_Section4-Step11.sh”
+        git push
+
+Step 12
+
+Task:
+Purple_Feature is merged with Development.
+
+Commands:
+        git checkout Purple_Feature                                          # (from)
+        git pull
+        git checkout Development                                             #  (into)
+        git pull
+        git log --oneline  --graph  --all
+        git diff Development  Purple_Feature
+        git merge -m "Section 4 - Step 12: Merging Purple_Feature into the Development branch" Purple_Feature
+        git push
+
+ 
+
+        git branch -d Purple_Feature
+        git push origin --delete Purple_Feature
+
+
+ 
+Step 13
+
+Task:
+Release branch created from Development (After Purple_Feature merge).
+
+Commands:
+        git branch -v
+        git checkout Development
+        git pull
+        git checkout -b Release Development
+        git branch --edit-description  Release
+        git push -u origin Release
+        git branch -v
+
+ 
+Step 14
+
+Task:
+Update the Red_Feature branch.
+
+Commands:
+        git checkout Red_Feature
+        vi Red_Feature/Section4_Step14.sh
+        git add Red_Feature/Section4_Step14.sh
+        git commit -m "Section 4 - Step 14: Creating Red_Feature/Section4_Step14.sh"
+        git push
+
+ 
+ Step 15
+
+Task:
+Update the Release branch.
+
+Commands:
+        git checkout Release
+        git pull
+        mkdir Release
+        vi Release/Release_Notes_Section5-Step15.txt
+        git add Release/Release_Notes_Section5-Step15.txt
+        git commit -m  "Release Branch: Release/Release_Notes_Section5-Step15.txt"
+        git push
+
+
+
+Step 16
+
+Task:
+The Release branch is merged into the Version 1.0 branch.
+
+Commands:
+        git checkout Release
+        git pull
+        git checkout Version_1.0
+        git pull
+        git log --oneline  --graph  --all
+        git diff Version_1.0  Release
+        git merge -m "Section 5 - Step 16: Merging Release into the Version 1.0 branch" Release
+        git push
+
+
+Step 17
+
+Task:
+Update the Development branch.
+
+Commands:
+        git checkout Development
+        vi Features/New_Dev.URL
+        git commit -am "Development: Section 5 - Step 17: Updating Features/New_Dev.URL"
+        git push
+
+
+
+Step 18
+
+Task:
+The Release branch is merged into the Development branch.
+
+Commands:
+        git checkout Release
+        git pull
+        git checkout Development
+        git pull
+        git log --oneline  --graph  --all
+        git diff Development  Release
+        git merge -m "Section 5 - Step 18: Merging Release into the Development branch" Release
+        git push
+
+
+Step 19
+
+Task:
+Version 1.1 branched from Version 1.0, then Version 1.0 frozen.
+
+Commands:
+        git checkout Version_1.0
+        git checkout -b Version_1.1 Version_1.0
+        git branch --edit-description  Version_1.1
+        git push -u origin Version_1.1
+
+
+Step 20
+
+Task:
+Release branch will be deleted.
+
+Commands:
+        git branch -d Release
+        git push origin --delete Release
+
+
+Step 21
+
+Task:
+Update the Development branch.
+
+Commands:
+        git checkout Development
+        vi Features/v1.1_New_Dev.URL
+        git add Features/v1.1_New_Dev.URL
+        git commit -m "Development: Section 5 - Step 21: Updating Features/v1.1_New_Dev.URL"
+        git push
+
+
